@@ -19,9 +19,10 @@ requirejs(['./WorldWindShim',
               LayerManager) {
         "use strict";
 
+        // 记录警告和错误
         WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
 
-        // Configure the amount of GPU memory to use.
+        // 配置要使用的GPU内存量
         WorldWind.configuration.gpuCacheSize = 500e6; // 500 MB
 
         var wwd = new WorldWind.WorldWindow("canvasOne");
@@ -46,14 +47,14 @@ requirejs(['./WorldWindShim',
             wwd.addLayer(layers[l].layer);
         }
 
+        // 初始化后飞向指定的位置
+        wwd.goTo(new WorldWind.Position(32, 110, 26584000));
+
         /* 大气层和星空夜景 */
         var starFieldLayer = new WorldWind.StarFieldLayer();
         var atmosphereLayer = new WorldWind.AtmosphereLayer();
         wwd.addLayer(starFieldLayer);
         wwd.addLayer(atmosphereLayer);
-
-        // Position
-        wwd.goTo(new WorldWind.Position(32, 110, 26584000));
 
         /* 根据时间模拟地球自转昼夜变化 */
         var now = new Date();
@@ -212,4 +213,5 @@ requirejs(['./WorldWindShim',
 
         // Create a layer manager for controlling layer visibility.
         var layerManger = new LayerManager(wwd);
+
     });
