@@ -1,5 +1,6 @@
-define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./basic/geoJson"],
-    function (init3Dglobe, starField, customImage, geoJson) {
+define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./basic/geoJson",
+        "./pop-up/Popup", "./pop-up/click_pop-up"],
+    function (init3Dglobe, starField, customImage, geoJson, Popup, clickPopUp) {
         "use strict";
         // 三维地球初始化
         init3Dglobe.show();
@@ -10,5 +11,9 @@ define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./b
         // 添加自定义标记
         // customImage.show();
         // 加载geojson数据
-        geoJson.show();
+        // geoJson.show();
+        // 弹出框
+        // Popup.show();
+        // 单击地球显示弹出框
+        clickPopUp.show();
     });
