@@ -6,8 +6,8 @@ define(['../WorldWindShim', './initWorldWind'],
         "use strict";
         return {
             show: function () {
-                var locations = [];
-                for (var i = 0; i < 10000; i++) {
+                const locations = [];
+                for (let i = 0; i < 10000; i++) {
                     locations.push(
                         new WorldWind.MeasuredLocation(
                             -89 + (179 * Math.random()),

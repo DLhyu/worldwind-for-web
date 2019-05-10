@@ -5,7 +5,7 @@ define(['../WorldWindShim'],
     function (WorldWind) {
         "use strict";
 
-       var wwd = new WorldWind.WorldWindow("canvasOne");
+        const wwd = new WorldWind.WorldWindow("canvasOne");
 
-       return wwd;
+        return wwd;
     });

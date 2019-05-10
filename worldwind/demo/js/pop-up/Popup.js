@@ -10,7 +10,7 @@ define(['../WorldWindShim', '../basic/initWorldWind', './AnnotationController'],
         return {
             show: function () {
                 // Set default annotation attributes.
-                var annotationAttributes = new WorldWind.AnnotationAttributes(null);
+                const annotationAttributes = new WorldWind.AnnotationAttributes(null);
                 annotationAttributes.cornerRadius = 14;
                 annotationAttributes.backgroundColor = WorldWind.Color.BLUE;
                 annotationAttributes.drawLeader = true;
@@ -23,7 +23,7 @@ define(['../WorldWindShim', '../basic/initWorldWind', './AnnotationController'],
                 annotationAttributes.textAttributes.color = WorldWind.Color.WHITE;
                 annotationAttributes.insets = new WorldWind.Insets(10, 10, 10, 10);
 
-                var annotationAttributes1 = new WorldWind.AnnotationAttributes(null);
+                const annotationAttributes1 = new WorldWind.AnnotationAttributes(null);
                 annotationAttributes1.cornerRadius = 14;
                 annotationAttributes1.backgroundColor = WorldWind.Color.YELLOW;
                 annotationAttributes1.drawLeader = true;
@@ -37,17 +37,17 @@ define(['../WorldWindShim', '../basic/initWorldWind', './AnnotationController'],
                 annotationAttributes1.insets = new WorldWind.Insets(10, 10, 10, 10);
 
                 // Set a location for the annotation to point to and create it.
-                var location = new WorldWind.Position(32, 110, 1e2);
-                var annotation = new WorldWind.Annotation(location, annotationAttributes);
+                const location = new WorldWind.Position(32, 110, 1e2);
+                const annotation = new WorldWind.Annotation(location, annotationAttributes);
                 // Text can be assigned to the annotation after creating it.
                 annotation.label = "测试窗口！";
 
-                var location1 = new WorldWind.Position(22, 120, 1e2);
-                var annotation1 = new WorldWind.Annotation(location1, annotationAttributes1);
+                const location1 = new WorldWind.Position(22, 120, 1e2);
+                const annotation1 = new WorldWind.Annotation(location1, annotationAttributes1);
                 annotation1.label = "测试窗口2！";
 
                 // Create and add the annotation layer to the WorldWindow's layer list.
-                var annotationsLayer = new WorldWind.RenderableLayer("Annotations");
+                const annotationsLayer = new WorldWind.RenderableLayer("Annotations");
                 annotationsLayer.addRenderables([annotation, annotation1]);
                 wwd.addLayer(annotationsLayer);
 

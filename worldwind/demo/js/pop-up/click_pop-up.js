@@ -11,14 +11,14 @@ define(['../WorldWindShim', '../basic/initWorldWind', './AnnotationController'],
             show: function () {
 
                 // 创建鼠标单击事件
-                var handleClick = function (recognizer) {
+                const handleClick = function (recognizer) {
                     // Obtain the event location.
-                    var x = recognizer.clientX,
+                    const x = recognizer.clientX,
                         y = recognizer.clientY;
 
                     // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
                     // relative to the upper left corner of the canvas rather than the upper left corner of the page.
-                    var pickList = wwd.pick(wwd.canvasCoordinates(x, y));
+                    const pickList = wwd.pick(wwd.canvasCoordinates(x, y));
 
                     // If only one thing is picked and it is the terrain, tell the WorldWindow to go to the picked location.
                     if (pickList.objects.length === 1 && pickList.objects[0].isTerrain) {
@@ -28,7 +28,7 @@ define(['../WorldWindShim', '../basic/initWorldWind', './AnnotationController'],
                 };
 
                 // Set default annotation attributes.
-                var annotationAttributes = new WorldWind.AnnotationAttributes(null);
+                const annotationAttributes = new WorldWind.AnnotationAttributes(null);
                 annotationAttributes.cornerRadius = 14;
                 annotationAttributes.backgroundColor = WorldWind.Color.BLUE;
                 annotationAttributes.drawLeader = true;
@@ -41,11 +41,12 @@ define(['../WorldWindShim', '../basic/initWorldWind', './AnnotationController'],
                 annotationAttributes.textAttributes.color = WorldWind.Color.WHITE;
                 annotationAttributes.insets = new WorldWind.Insets(10, 10, 10, 10);
 
-                var annotationsLayer;
+                let annotationsLayer;
+
                 function popUp(position) {
                     // Set a location for the annotation to point to and create it.
-                    var location = new WorldWind.Position(position.latitude, position.longitude, 1e2);
-                    var annotation = new WorldWind.Annotation(location, annotationAttributes);
+                    const location = new WorldWind.Position(position.latitude, position.longitude, 1e2);
+                    const annotation = new WorldWind.Annotation(location, annotationAttributes);
                     // Text can be assigned to the annotation after creating it.
                     annotation.label = "测试窗口！";
 
@@ -57,13 +58,13 @@ define(['../WorldWindShim', '../basic/initWorldWind', './AnnotationController'],
                 }
 
                 // Listen for mouse clicks.
-                var clickRecognizer = new WorldWind.ClickRecognizer(wwd, handleClick);
+                const clickRecognizer = new WorldWind.ClickRecognizer(wwd, handleClick);
 
-                var handlePick = function(recognizer){
-                    var x = recognizer.clientX,
+                const handlePick = function (recognizer) {
+                    const x = recognizer.clientX,
                         y = recognizer.clientY;
-                    console.log(x+','+y);
-                }
+                    console.log(x + ',' + y);
+                };
 
                 // Listen for mouse move.
                 // wwd.addEventListener("mousemove", handlePick);

@@ -15,8 +15,9 @@ define(['../WorldWindShim', './initWorldWind'],
                 /* 添加大气层和星空夜景 */
                 starFieldLayer = new WorldWind.StarFieldLayer();
                 atmosphereLayer = new WorldWind.AtmosphereLayer();
+                // starFieldLayer.showSun = false;
                 wwd.addLayer(starFieldLayer);
-                wwd.addLayer(atmosphereLayer);
+                // wwd.addLayer(atmosphereLayer);
                 starFieldLayer.time = now;
                 atmosphereLayer.time = now;
             },
