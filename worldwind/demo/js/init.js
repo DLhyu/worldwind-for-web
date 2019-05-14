@@ -13,7 +13,7 @@ define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./b
         // 添加自定义标记
         // customImage.show();
         // 加载geojson数据
-        // geoJson.show();
+        geoJson.show();
         // 弹出框
         // Popup.show();
         // 单击地球显示弹出框
@@ -25,5 +25,5 @@ define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./b
         // 热力图
         // heatMap.show();
         // 局部温度等值面
-        drawIsosurface.show();
+        // drawIsosurface.show();
     });
