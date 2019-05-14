@@ -1,6 +1,8 @@
 define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./basic/geoJson",
-        "./pop-up/Popup", "./pop-up/click_pop-up", "./basic/mark", "./basic/label", "./basic/heatMap"],
-    function (init3Dglobe, starField, customImage, geoJson, Popup, clickPopUp, mark, label, heatMap) {
+        "./pop-up/Popup", "./pop-up/click_pop-up", "./basic/mark", "./basic/label", "./basic/heatMap",
+        "./isosurface/drawIsosurface"],
+    function (init3Dglobe, starField, customImage, geoJson, Popup, clickPopUp, mark, label, heatMap,
+              drawIsosurface) {
         "use strict";
         // 三维地球初始化
         init3Dglobe.show();
@@ -11,7 +13,7 @@ define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./b
         // 添加自定义标记
         // customImage.show();
         // 加载geojson数据
-        geoJson.show();
+        // geoJson.show();
         // 弹出框
         // Popup.show();
         // 单击地球显示弹出框
@@ -22,4 +24,6 @@ define(['./basic/basicExample', './basic/starField', "./basic/customImage", "./b
         // label.show();
         // 热力图
         // heatMap.show();
+        // 局部温度等值面
+        drawIsosurface.show();
     });

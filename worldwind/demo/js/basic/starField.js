@@ -17,7 +17,7 @@ define(['../WorldWindShim', './initWorldWind'],
                 atmosphereLayer = new WorldWind.AtmosphereLayer();
                 // starFieldLayer.showSun = false;
                 wwd.addLayer(starFieldLayer);
-                // wwd.addLayer(atmosphereLayer);
+                wwd.addLayer(atmosphereLayer);
                 starFieldLayer.time = now;
                 atmosphereLayer.time = now;
             },
